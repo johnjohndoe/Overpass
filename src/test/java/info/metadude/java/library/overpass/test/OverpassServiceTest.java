@@ -27,7 +27,8 @@ public class OverpassServiceTest {
     @Test
     public void testThatRealServerIsReachable() {
         // http://overpass-api.de/api/interpreter?data=[out:json];node(around:1600,52.516667,13.383333)["amenity"="post_box"];out;
-        String data = "[out:json];node(around:1600,52.516667,13.383333)[\"amenity\"=\"post_box\"];out;";
+        int responseLimit = 13;
+        String data = "[out:json];node(around:1600,52.516667,13.383333)[\"amenity\"=\"post_box\"];out " + responseLimit + ";";
         Call<OverpassResponse> streamsResponseCall = streamsService.getOverpassResponse(data);
 
         try {
@@ -41,6 +42,7 @@ public class OverpassServiceTest {
                 assertThat(elements)
                         .isNotNull()
                         .isNotEmpty();
+                assertThat(elements.size()).isLessThanOrEqualTo(responseLimit);
                 for (Element element : elements) {
                     testElement(element);
                 }
