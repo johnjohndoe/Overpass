@@ -26,9 +26,11 @@ public class OverpassServiceTest {
 
     @Test
     public void testThatRealServerIsReachable() {
-        // http://overpass-api.de/api/interpreter?data=[out:json];node(around:1600,52.516667,13.383333)["amenity"="post_box"];out qt 13;
         int responseLimit = 13;
-        String data = "[out:json];node(around:1600,52.516667,13.383333)[\"amenity\"=\"post_box\"];out qt " + responseLimit + ";";
+        String data = "[out:json];" +
+                "node(around:1600,52.516667,13.383333)" +
+                "[\"amenity\"=\"post_box\"];" +
+                "out qt " + responseLimit + ";";
         Call<OverpassResponse> streamsResponseCall = streamsService.getOverpassResponse(data);
 
         try {
