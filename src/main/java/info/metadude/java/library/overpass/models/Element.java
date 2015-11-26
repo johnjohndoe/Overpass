@@ -1,5 +1,7 @@
 package info.metadude.java.library.overpass.models;
 
+import java.util.Map;
+
 public class Element {
 
     public String type;
@@ -10,7 +12,7 @@ public class Element {
 
     public double lon;
 
-    public Tags tags;
+    public Map<String, String> tags;
 
     @Override
     public boolean equals(Object o) {
