@@ -9,6 +9,19 @@ A Java library containing a parser and models for the Overpass-Turbo API availab
 
 ## Usage
 
+The following example shows how to query post boxes:
+
+```java
+Map<String, String> tags = new HashMap<String, String>() {
+    {
+        put("amenity", "post_box");
+    }
+};
+DataQuery dataQuery = new DataQuery(600, 52.516667, 13.383333, tags, true, 13);
+Call<OverpassResponse> streamsResponseCall = streamsService.getOverpassResponse(data);
+// Execute streamsResponse call to send a request to the Overpass-Turbo API.
+```
+
 ### Gradle build
 
 To deploy the library to your local Maven repository run the following task:
