@@ -10,9 +10,9 @@ public class DataQuery {
 
     protected final int radius;
 
-    protected final double longitude;
+    protected final double latitude; // 52.516667
 
-    protected final double latitude;
+    protected final double longitude; // 13.383333
 
     protected final Map<String, String> tags;
 
@@ -21,14 +21,14 @@ public class DataQuery {
     protected final int maxResponseCount;
 
     public DataQuery(int radius,
-                     double longitude,
                      double latitude,
+                     double longitude,
                      Map<String, String> tags,
                      boolean sortByDistance,
                      int maxResponseCount) {
         this.radius = radius;
-        this.longitude = longitude;
         this.latitude = latitude;
+        this.longitude = longitude;
         this.tags = tags;
         this.sortByDistance = sortByDistance;
         this.maxResponseCount = maxResponseCount;
@@ -39,7 +39,7 @@ public class DataQuery {
         String sortInstruction = sortByDistance ? "qt " : "";
         String formattedTags = getFormattedTags();
         return "[out:json];" +
-                "node(around:" + radius + "," + longitude + "," + latitude + ")" +
+                "node(around:" + radius + "," + latitude + "," + longitude + ")" +
                 formattedTags +
                 "out " +
                 sortInstruction +
@@ -50,11 +50,11 @@ public class DataQuery {
         if (radius < 2) {
             throw new IllegalArgumentException("Expected maximum radius to be greater then one, but was " + radius);
         }
-        if (longitude < -180 || longitude > 180) {
-            throw new IllegalArgumentException("Expected longitude between -180 and 180, but was " + longitude);
-        }
         if (latitude < -90 || latitude > 90) {
             throw new IllegalArgumentException("Expected latitude between -90 and 90, but was " + latitude);
+        }
+        if (longitude < -180 || longitude > 180) {
+            throw new IllegalArgumentException("Expected longitude between -180 and 180, but was " + longitude);
         }
         if (tags == null || tags.isEmpty()) {
             throw new IllegalArgumentException("Expected at least one tag.");
