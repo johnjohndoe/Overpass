@@ -59,6 +59,10 @@ Run the following command to execute all tests:
 $ ./gradlew clean test
 ```
 
+## Which applications are using this library?
+
+* WhereWhat Android Wear app, [sources][wherewhat-sources]
+
 
 ## Author
 
@@ -82,3 +86,4 @@ $ ./gradlew clean test
 
 
 [tobias-preuss]: https://github.com/johnjohndoe
+[wherewhat-sources]: https://github.com/ligi/WhereWhat
