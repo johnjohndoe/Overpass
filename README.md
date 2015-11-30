@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/johnjohndoe/Overpass.svg)](https://travis-ci.org/johnjohndoe/Overpass) [![Apache License](http://img.shields.io/badge/license-Apache%20License%202.0-lightgrey.svg)](http://choosealicense.com/licenses/apache-2.0/) [![VersionEye](https://www.versioneye.com/user/projects/5658152672d5f3000900bf0c/badge.svg)](https://www.versioneye.com/user/projects/5658152672d5f3000900bf0c)
+[![Build Status](https://travis-ci.org/johnjohndoe/Overpass.svg)](https://travis-ci.org/johnjohndoe/Overpass) [![Download](https://api.bintray.com/packages/tbsprs/maven/Overpass/images/download.svg)](https://bintray.com/tbsprs/maven/Overpass/_latestVersion) [![Apache License](http://img.shields.io/badge/license-Apache%20License%202.0-lightgrey.svg)](http://choosealicense.com/licenses/apache-2.0/) [![VersionEye](https://www.versioneye.com/user/projects/5658152672d5f3000900bf0c/badge.svg)](https://www.versioneye.com/user/projects/5658152672d5f3000900bf0c)
 
 # Overpass library
 
