@@ -47,7 +47,7 @@ and to your application module `build.gradle`:
 
 ```groovy
 dependencies {
-    compile 'info.metadude.java.library.overpass:overpass-library:{$version}'
+    compile 'info.metadude.java.library.overpass:overpass-library:${version}'
 }
 ```
 
