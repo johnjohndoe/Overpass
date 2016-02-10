@@ -22,3 +22,8 @@ before_script:
 
 script:
   - ./gradlew clean assemble test
+
+addons:
+  # Fix OpenJDK builds
+  # https://github.com/travis-ci/travis-ci/issues/5227
+  hostname: short-hostname
