@@ -29,7 +29,7 @@ compileJava {
 dependencies {
     compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
     compile 'com.squareup.retrofit:converter-moshi:2.0.0-beta2'
-    compile 'com.squareup.okhttp:okhttp:2.7.2'
+    compile 'com.squareup.okhttp:okhttp:2.7.4'
     compile 'com.squareup.moshi:moshi:1.1.0'
 
     testCompile "junit:junit:4.12"
