@@ -1,11 +1,8 @@
 package info.metadude.java.library.overpass;
 
-import com.squareup.okhttp.Interceptor;
-import com.squareup.okhttp.OkHttpClient;
-import retrofit.MoshiConverterFactory;
-import retrofit.Retrofit;
-
-import java.util.List;
+import okhttp3.OkHttpClient;
+import retrofit2.Retrofit;
+import retrofit2.converter.moshi.MoshiConverterFactory;
 
 public final class ApiModule {
 
@@ -13,15 +10,15 @@ public final class ApiModule {
         return provideOverpassService(null);
     }
 
-    public static OverpassService provideOverpassService(final List<Interceptor> httpClientInterceptors) {
-        return createRetrofit(OverpassService.BASE_URL, httpClientInterceptors)
+    public static OverpassService provideOverpassService(final OkHttpClient okHttpClient) {
+        return createRetrofit(OverpassService.BASE_URL, okHttpClient)
                 .create(OverpassService.class);
     }
 
-    private static Retrofit createRetrofit(String baseUrl, List<Interceptor> httpClientInterceptors) {
-        OkHttpClient httpClient = new OkHttpClient();
-        if (httpClientInterceptors != null) {
-            httpClient.interceptors().addAll(httpClientInterceptors);
+    private static Retrofit createRetrofit(final String baseUrl, final OkHttpClient okHttpClient) {
+        OkHttpClient httpClient = okHttpClient;
+        if (httpClient == null) {
+            httpClient = new OkHttpClient();
         }
 
         return new Retrofit.Builder()

@@ -6,8 +6,8 @@ import info.metadude.java.library.overpass.models.Element;
 import info.metadude.java.library.overpass.models.OverpassResponse;
 import org.junit.Before;
 import org.junit.Test;
-import retrofit.Call;
-import retrofit.Response;
+import retrofit2.Call;
+import retrofit2.Response;
 
 import java.io.IOException;
 import java.util.List;
@@ -35,7 +35,7 @@ public class OverpassServiceTest {
 
         try {
             Response<OverpassResponse> response = streamsResponseCall.execute();
-            if (response.isSuccess()) {
+            if (response.isSuccessful()) {
                 OverpassResponse overpassResponse = response.body();
                 // Expect at least some data
                 assertThat(overpassResponse)
