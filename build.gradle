@@ -36,4 +36,8 @@ dependencies {
     testCompile "org.assertj:assertj-core:2.3.0"
 }
 
+tasks.matching { it instanceof Test }.all {
+    testLogging.events = ["failed", "passed", "skipped"]
+}
+
 apply from: 'gradle/deploy.gradle'
