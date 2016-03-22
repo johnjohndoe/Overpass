@@ -3,10 +3,10 @@ package info.metadude.java.library.overpass.utils;
 import java.util.Map;
 
 /**
- * Constructs a data query for Overpass-Turbo
+ * Constructs a data query limited to nodes for Overpass-Turbo
  * Example: "[out:json];node(around:600,52.516667,13.383333)[\"amenity\"=\"post_box\"];out qt 13;"
  */
-public class DataQuery {
+public class NodesQuery {
 
     protected final int radius;
 
@@ -20,12 +20,12 @@ public class DataQuery {
 
     protected final int maxResponseCount;
 
-    public DataQuery(int radius,
-                     double latitude,
-                     double longitude,
-                     Map<String, String> tags,
-                     boolean sortByDistance,
-                     int maxResponseCount) {
+    public NodesQuery(int radius,
+                      double latitude,
+                      double longitude,
+                      Map<String, String> tags,
+                      boolean sortByDistance,
+                      int maxResponseCount) {
         this.radius = radius;
         this.latitude = latitude;
         this.longitude = longitude;
