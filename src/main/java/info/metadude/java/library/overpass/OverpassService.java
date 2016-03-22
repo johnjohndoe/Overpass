@@ -1,9 +1,9 @@
 package info.metadude.java.library.overpass;
 
 import info.metadude.java.library.overpass.models.OverpassResponse;
-import retrofit.Call;
-import retrofit.http.GET;
-import retrofit.http.Query;
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 /**
  * Service to query Overpass-Turbo.
